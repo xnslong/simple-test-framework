@@ -12,7 +12,7 @@ function run_test () {
         echo -e "$msg"
     } || {
         msg="$CASE_NAME   `red "[FAIL]"`" 
-        info "$msg" >> "$LOG_FILE"
+        error "$msg" >> "$LOG_FILE"
         echo -e "$msg"
     }
     echo -e "" >> "$LOG_FILE"
