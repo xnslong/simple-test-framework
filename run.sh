@@ -5,7 +5,7 @@ LOG_DIR="logs/$TEST_TIME"
 [ -d "$LOG_DIR" ] || mkdir -p "$LOG_DIR"
 
 export REPORT="$LOG_DIR/report.log"
-for l in lib/*; do
+for l in common/*; do
     source "$l"
 done
 
