@@ -1,0 +1,15 @@
+#!/bin/bash
+
+demo_server=example.com
+
+function test_xxx_api() {
+    ret="$(logged curl -s http://${demo_server}/xxx-api)"
+    status="$(echo "$ret" | jq '.status')"
+    assert_equals "0" "$status" ".status"
+}
+
+function test_yyy_api() {
+    ret="$(logged curl -s http://${demo_server}/yyy-api)"
+    status="$(echo "$ret" | jq '.status')"
+    assert_equals "" "$status" ".status"
+}
