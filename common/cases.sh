@@ -22,7 +22,7 @@ function run_tests () {
     source "$1"
     export SUITE="$(echo "$1" | sed -E 's#(.*/)*([^/]+)$#\2#g')"
     export LOG_FILE="$LOG_DIR/$SUITE.log"
-    echo  -e "----- running tests in \"$SUITE\" (detail logs see $LOG_FILE) -----"
+    echo  -e "test suite \"$SUITE\" (log details see $LOG_FILE)"
     declare -F | awk '{print $3}' | while read name; do
         if echo "$name" | grep -E '^test_.*' &> /dev/null; then
             export CASE="$name"
