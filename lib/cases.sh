@@ -2,16 +2,18 @@
 
 function run_test () {
     echo -e "-------------------------" >> "$LOG_FILE"
-    CASE_NAME="\033[33m$1\033[0m (in \033[33m$SUITE\033[0m)"
+    CASE_NAME="`yellow $1` (in `yellow $SUITE`)"
     info "running testcase $CASE_NAME" >> "$LOG_FILE"
     {
         "$1" &>> "$LOG_FILE"
     } && {
-        info "$CASE_NAME   \033[32m[SUCCESS]\033[0m" >> "$LOG_FILE"
-        echo -e "$CASE_NAME   \033[32m[SUCCESS]\033[0m"
+        msg="$CASE_NAME   `green "[SUCCESS]"`" 
+        info "$msg" >> "$LOG_FILE"
+        echo -e "$msg"
     } || {
-        error "$CASE_NAME   \033[31m[FAIL]\033[0m" >> "$LOG_FILE"
-        echo -e "$CASE_NAME   \033[31m[FAIL]\033[0m"
+        msg="$CASE_NAME   `red "[FAIL]"`" 
+        info "$msg" >> "$LOG_FILE"
+        echo -e "$msg"
     }
     echo -e "" >> "$LOG_FILE"
 }
