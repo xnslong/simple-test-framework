@@ -24,8 +24,8 @@ function run_failed {
     failures="$(cat "$1" | sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"| awk '$4 ~ /.*FAIL.*/ {print $1, $3}')"
     failure_file="$(echo "$failures" | awk '{print $2}' | sort | uniq)"
 
-    for f in `find cases -name '*.case'`; do
-        if echo "$failure_file" | grep "$f"; then 
+    for f in `echo "$failure_file"`; do
+        if [ -r "$f" ] && echo "$f" | grep -E -E ".*\.case" &> /dev/null; then 
             run_tests "$f" "$(echo "$failures" | grep "$f" | awk '{print $1}')" | tee -a "$REPORT"
         fi
     done

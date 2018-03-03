@@ -28,3 +28,12 @@ The structure of the directries are:
 ```
 
 some other tools required by the cases should pre-exist before run the cases, like `curl`, `jq`, etc.
+
+USAGES
+
+```
+$ ./run.sh -h
+./run.sh  -a                       : run all test cases
+./run.sh  -r <report file>         : run all failed test cases in the report file
+./run.sh  -h                       : show this help and exit
+```
