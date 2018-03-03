@@ -5,8 +5,10 @@ LOG_DIR="logs/$TEST_TIME"
 [ -d "$LOG_DIR" ] || mkdir -p "$LOG_DIR"
 
 export REPORT="$LOG_DIR/report.log"
-for l in common/*; do
-    source "$l"
+for l in `tree -f common | awk '{print $NF}'`; do
+    if echo "$l" | grep -E '.*\.sh$' &> /dev/null; then
+        source "$l"
+    fi
 done
 
 for f in cases/*; do
