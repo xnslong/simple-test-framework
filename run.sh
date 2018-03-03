@@ -35,9 +35,9 @@ function run_failed {
 
 function print_usage {
 cat << EOFSDFKJ
-$0                           run all test cases
-$0  -p <report file>         run all failed test cases in the report file
-$0  -h                       show this help and exit
+`green $0`  -a                       : run all test cases
+`green $0`  -r <report file>         : run all failed test cases in the report file
+`green $0`  -h                       : show this help and exit
 EOFSDFKJ
 }
 
@@ -46,14 +46,17 @@ if [ $# -gt 0 ]; then
         -h)
             print_usage
             ;;
-        -p)
+        -r)
             run_failed "$2"
             ;;
-        *)
+        -a)
             run_all
+            ;;
+        *)
+            print_usage
     esac
 else
-    run_all
+    print_usage
 fi
 
 unset TEST_TIME
