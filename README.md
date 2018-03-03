@@ -24,3 +24,5 @@ The structure of the directries are:
 ├── README.md
 └── run.sh                  # the script to start test
 ```
+
+some other tools required by the cases should be pre-exist, like `curl`, `jq`, etc.
