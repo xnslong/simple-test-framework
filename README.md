@@ -1,5 +1,7 @@
 # simple-test-framework
 
+[中文README](README-zh.md)
+
 This is a simple test framework based on bash. 
 
 The structure of the directries are:
@@ -13,7 +15,7 @@ The structure of the directries are:
 │                           # with the 'test_' prefix, e.g. test_demo_api. and other 
 │                           # functions are all treated as non-case functions
 │
-├── lib                     # the directory is where all common tools are placed
+├── common                  # the directory is where all common tools are placed
 │   ├── assert.sh           # the file name of tools should end with the '.sh' suffix
 │   ├── cases.sh            # other files are ignored.
 │   ├── common.sh
