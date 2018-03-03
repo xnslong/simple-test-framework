@@ -16,10 +16,12 @@ The structure of the directries are:
 │                           # functions are all treated as non-case functions
 │
 ├── common                  # the directory is where all common tools are placed
-│   ├── assert.sh           # the file name of tools should end with the '.sh' suffix
-│   ├── cases.sh            # other files are ignored.
-│   ├── common.sh
-│   └── log.sh
+│   └── lib                 # the file name of tools should end with the '.sh' suffix
+│       ├── assert.sh       # other files are ignored. it detects the scripts recursively
+│       ├── test.sh
+│       ├── color.sh
+│       ├── common.sh
+│       └── logging.sh
 ├── logs                    # the directory is where all test logs places
 ├── README.md
 └── run.sh                  # the script to start test

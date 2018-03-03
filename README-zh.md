@@ -11,11 +11,13 @@
 │                           # 用例文件中的方法，如果名字以'test_'前缀开头，则被认为是测试用例
 │                           # 将被执行；如果不以该前缀开头，则被认为是普通方法
 │
-├── common                  # 公共目录
-│   ├── assert.sh           # 文件必需以'.sh'后缀结尾，如果不是，则不予识别
-│   ├── cases.sh
-│   ├── common.sh
-│   └── log.sh
+├── common                  # 公共文件目录
+│   └── lib                 # 文件必需以'.sh'后缀结尾，如果不是，则不予识别
+│       ├── assert.sh       # 循环查找文件，脚本可以在子目录中。
+│       ├── color.sh        # 配置文件，可以放在`common/conf/env.sh`中
+│       ├── common.sh
+│       ├── logging.sh
+│       └── test.sh
 ├── logs                    # 日志文件目录
 ├── README.md
 └── run.sh                  # 测试启动脚本
