@@ -25,4 +25,4 @@ The structure of the directries are:
 └── run.sh                  # the script to start test
 ```
 
-some other tools required by the cases should be pre-exist, like `curl`, `jq`, etc.
+some other tools required by the cases should pre-exist before run the cases, like `curl`, `jq`, etc.
