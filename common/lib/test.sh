@@ -9,11 +9,11 @@ function run_test () {
         "$1" &>> "$LOG_FILE"
     } && {
         msg="$CASE_NAME   `green "[SUCCESS]"`" 
-        info "$msg" >> "$LOG_FILE"
+        info "[RESULT] $msg" >> "$LOG_FILE"
         echo -e "$msg"
     } || {
         msg="$CASE_NAME   `red "[FAIL]"`" 
-        error "$msg" >> "$LOG_FILE"
+        error "[RESULT] $msg" >> "$LOG_FILE"
         echo -e "$msg"
     }
     echo -e "" >> "$LOG_FILE"
